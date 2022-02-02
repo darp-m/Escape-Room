@@ -7,13 +7,25 @@ var told=0;
 timeup=0;
 var answered=0;
 var clue = ["Check the punctuation.","Solve b first.","Think of it as two seperate houses.","Think of how many holes a shirt normally has.","It says they're $1.00 APART not that one of them is $1.00.","The answer has six letters.","one digit.","seven letters.", "two digits."];
-var riddles = [0,"A cat has 3 kittens: One, Two, and Three. What is the cat's name."," ","A man buys a house for 1 million dollars. He sells the house for 1.1 million dollars. Then, he buys it back for 1.2 million dollars. He sells it again for 1.3 million dollars. How much money did he earn/lose? Answer in millions.","How many holes does this t-shirt have?", "A bat and a baseball cost $1.10. If the bat costs one more dollar than the baseball, how much does the bat cost? Answer like this: $_._ _","The one who makes it always sells it. \n The one who buys it never uses it.\n The one who uses it never knows he's using it.\n It is a ______."]
+var riddles = [0,"A cat has 3 kittens: One, Two, and Three. <br/>What is the cat's name.","Doug has forgotten the 5 digit code to his briefcase but he did remember 5 clues: <br/>1. fifth number + third number = 14 <br/>2. fourth number = one more than the second number <br/>3. first number = one less than twice the second number <br/>4. second number + third number = 10 <br/>5. sum of all five numbers is 30 <br/>What were the five numbers in what order? ","A man buys a house for 1 million dollars. He sells the house for 1.1 million dollars. <br/>Then, he buys it back for 1.2 million dollars. <br/>He sells it again for 1.3 million dollars. <br/>How much money did he earn/lose? Answer in millions.","How many holes does this t-shirt have?", "A bat and a baseball cost $1.10. <br/>If the bat costs one more dollar than the baseball, how much does the bat cost? <br/>Answer like this: $_._ _","The one who makes it always sells it. \n The one who buys it never uses it.\n The one who uses it never knows he's using it.\n It is a ______."]
 var remclu = 3;
 var clueUsed = 0;
 var answer = ["WHAT",74658,0.2,8,"$1.05","COFFIN",7,"JANUARY",12,0];
 var roomNum=1;
+var riddle1 = new Image();
+riddle1.src="https://media.giphy.com/media/lJNoBCvQYp7nq/giphy.gif";
+var riddle2 = new Image();
+riddle2.src="https://media.giphy.com/media/gSJ6IIv1SgxqCfmttT/giphy.gif";
+var riddle3 = new Image();
+riddle3.src="https://media.giphy.com/media/UVmmHk6QlUPaU/giphy.gif";
+var riddle4 = new Image();
+riddle4.src="https://files.brightside.me/files/news/part_37/372760/15821510-6944610-1-3ImageOther-article-0-1503490428-1503490430-650-1-1503490430-650-0d38380460-1504370121.jpg";
+var riddle5 = new Image();
+riddle5.src="https://media.giphy.com/media/zxxXYJqTlpBnO/giphy.gif"
+var riddle6 = new Image();
+riddle6.src="https://giphy.com/clips/martin-episode-17-martin-tv-show-YUA28U4QVjkH1YyJIn"
 var win=new Image();
-win.src="http://www.handymanserviceomahane.com/images/1051038_0.jpg"
+win.src="https://media.giphy.com/media/n5VaQoW39Z9S0/giphy.gif" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/olympics-shaun-the-sheep-aardman-xT8qBepJQzUjXpeWU8">via GIPHY</a></p>
 document.getElementById('timer').innerHTML =
   10 + ":" + 00;
 startTimer();
@@ -89,7 +101,6 @@ function ent(){
       canvas.height=400;
       ctx.clearRect(0,0,canvas.width,canvas.height)
       ctx.drawImage(win,0,0,400,400)
-      <iframe //win.src="https://giphy.com/embed/xT8qBepJQzUjXpeWU8" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/olympics-shaun-the-sheep-aardman-xT8qBepJQzUjXpeWU8">via GIPHY</a></p>
     }
   }
 }
@@ -100,6 +111,32 @@ function changeCanvas(){
    clueUsed=0;
    document.getElementById("INPUT").value="";
 document.getElementById("clueMessage").innerHTML="";
+  ctx.clearRect(0,0,canvas.width,canvas.height)
+  if(roomNum==2){
+    canvas.width=650;
+    canvas.height=400
+    ctx.drawImage(riddle2, 0,0, 650, 400);
+  }
+  if(roomNum==3){
+    canvas.width=300;
+    canvas.height=300
+    ctx.drawImage(riddle3, 0,0, 300, 300);
+  }
+  if(roomNum==4){
+    canvas.width=350;
+    canvas.height=300
+    ctx.drawImage(riddle4, 0,0, 350, 300);
+  }
+  if(roomNum==5){
+    canvas.width=600;
+    canvas.height=150
+    ctx.drawImage(riddle5, 0,0, 600, 150);
+  }
+  if(roomNum==6){
+    canvas.width=300;
+    canvas.height=300
+    ctx.drawImage(riddle6, 0,0, 300, 300);
+  }
   document.getElementById("riddle").innerHTML=riddles[roomNum];
 }
 help();
